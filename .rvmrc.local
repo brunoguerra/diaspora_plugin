@@ -1,0 +1,10 @@
+DB="postgres"
+export DB="postgres"
+
+rubygems_version="1.8.24"
+ruby_version="1.9.2-p320"
+gemset="now"
+
+
+    rvm --create use "$ruby_version@$gemset"
+
