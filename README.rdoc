@@ -1,3 +1,11 @@
 = DiasporaPlugin
 
 This plugin transform diaspora into a engine. So, customize diaspora become to easy task.
+
+
+Directories tree dependencies
+
+    root/
+      diaspora/
+      diaspora_plugin/
+      your_project_social_network/
