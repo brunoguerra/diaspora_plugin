@@ -1,3 +1,3 @@
 = DiasporaPlugin
 
-This project rocks and uses MIT-LICENSE.
+This plugin, tranform diaspora into engine. So, customize diaspora become to easy task.
