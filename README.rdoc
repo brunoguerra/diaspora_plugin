@@ -8,4 +8,4 @@ Directories tree dependencies
     root/
       diaspora/
       diaspora_plugin/
-      your_project_social_network/
+      your_custom_pod_diaspora/
