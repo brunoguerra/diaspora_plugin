@@ -26,6 +26,7 @@ module DiasporaPlugin
       config.autoload_once_paths += %W{#{ENV['DIASPORA_HOME']}/lib}
       
       ActionController::Base.send :include, ActionController::MobileFu
+      ActionController::Base.append_view_path "#{ENV['DIASPORA_HOME']}/app/views"
       
        config.generators do |g|
          g.template_engine :haml

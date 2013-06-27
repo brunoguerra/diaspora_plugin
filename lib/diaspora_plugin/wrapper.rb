@@ -20,6 +20,8 @@ module Diaspora
     end
   end
   
+  # Called on self.initialize
+  #
   @@autloads_initialized = false
   def self.configure_autoloads!
     return if @@autloads_initialized
@@ -27,8 +29,7 @@ module Diaspora
     
     ::Rails.application.config.helpers_paths       += %W{#{ENV['DIASPORA_HOME']}/app/helpers}
     ::Rails.application.config.assets.paths        += %W{#{ENV['DIASPORA_HOME']}/app/assets/images #{ENV['DIASPORA_HOME']}/app/assets/javascripts #{ENV['DIASPORA_HOME']}/app/assets/stylesheets #{ENV['DIASPORA_HOME']}/app/assets/templates #{ENV['DIASPORA_HOME']}/vendor/assets/javascripts #{ENV['DIASPORA_HOME']}/vendor/assets/stylesheets #{ENV['DIASPORA_HOME']}/lib/assets/javascripts }
-    ActionController::Base.prepend_view_path          "#{ENV['DIASPORA_HOME']}/app/views"
-    
+        
     autoload_path(
     %W{#{ENV['DIASPORA_HOME']}/lib
       #{ENV['DIASPORA_HOME']}/vendor
@@ -69,11 +70,7 @@ module Diaspora
     ActiveSupport::Dependencies.autoload_paths += paths
   end
   
-  #
-  # Changed Environment Classes and Modules
-  #
-  
-  # Change Root path
+  # Change Application Root path
   #
   def self.wrap_environment
     ::Rails.module_eval { def self.root; Pathname.new(ENV['DIASPORA_HOME']); end }    
